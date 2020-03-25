@@ -17,18 +17,23 @@
   height: 80vh;
   display: flex;
 }
+.first-section {
+  background-color: grey;
+  display: flex;
+}
+
 .first-section, .second-section {
   width: 30%;
   height: auto;
+  display: flex;
+  flex-direction: column;
 }
 .gap{
   width: 40%;
   background-color: grey;
 }
-.first-section {
-  background-color: grey;
-  display: flex;
-  justify-content: flex-end;
+.calendar{
+  background-color: white;
 }
 
 .addTask:hover {

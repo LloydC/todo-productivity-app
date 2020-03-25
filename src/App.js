@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import './App.css';
 
 function App() {
+
+  const [day, setDay] = useState(undefined)
   return (
     <div className="App">
       <header className="App-header">
@@ -13,18 +15,28 @@ function App() {
       
       <div className="container">
         <div className="first-section">
-          <b>Next 7 days</b>
+          <p><b>Next 7 days</b></p>
+          <p>Today</p>
+          <p>Tomorrow</p>
+          <p>...</p>
         </div>
 
         <div className="second-section">
-          <p><b>Next 7 days</b></p>
-          <p>Today</p>
-          <span className="addTask">+ Add task</span>
-          <p>Tomorrow</p>
+        {day ? (
+          <p><b>{day.toLocaleDateString()}</b></p>
+        ) : (
+          <p><b>Current Day </b></p>
+        )}
+          
+          <ul>
+            <li>Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li>
+          </ul>
           <span className="addTask">+ Add task</span>
         </div>
         <div className="gap">
-          <DayPicker />;
+          <DayPicker onDayClick={setDay} selectedDays={day} className="calendar"/>;
         </div>
       </div>
       
