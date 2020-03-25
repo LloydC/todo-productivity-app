@@ -4,13 +4,22 @@ import 'react-day-picker/lib/style.css';
 import './App.css';
 
 function App() {
+  const [day, setDay] = useState(undefined);
+  const modifiers = { 
+    sundays: { daysOfWeek: [0] },
+  }
+  const modifiersStyles = {
+    sundays: {
+      color: '#ffc107',
+      backgroundColor: '#fffdee',
+    }
+  }
 
-  const [day, setDay] = useState(undefined)
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Todo Productivity App</h1>
-        <h2>It is {new Date().toLocaleTimeString()}.</h2>
+        <h3>Todo Productivity App</h3>
+        <p>It is {new Date().toLocaleTimeString()}.</p>
       </header>
       
       <div className="container">
@@ -36,7 +45,12 @@ function App() {
           <span className="addTask">+ Add task</span>
         </div>
         <div className="gap">
-          <DayPicker onDayClick={setDay} selectedDays={day} className="calendar"/>;
+          <DayPicker onDayClick={setDay} 
+                    selectedDays={day} 
+                    className="calendar"
+                      modifiers={modifiers}
+                      modifiersStyles={modifiersStyles}
+                    />;
         </div>
       </div>
       
