@@ -4,6 +4,13 @@ import 'react-day-picker/lib/style.css';
 import './App.css';
 
 function App() {
+  const today = new Date();
+  const month = today.getUTCMonth() + 1; //months from 1-12
+  const today2 = today.getUTCDate();
+  const year = today.getUTCFullYear();
+  const currentDay = `${today2}/${month <10 ? "0"+ month : month}/${year}`
+// Need to build a function for line 8-12
+
   const [day, setDay] = useState(undefined);
   const modifiers = { 
     sundays: { daysOfWeek: [0] },
@@ -34,7 +41,7 @@ function App() {
         {day ? (
           <p><b>{day.toLocaleDateString()}</b></p>
         ) : (
-          <p><b>Current Day </b></p>
+          <p><b>{currentDay} </b></p>
         )}
           
           <ul>
@@ -50,7 +57,7 @@ function App() {
                     className="calendar"
                       modifiers={modifiers}
                       modifiersStyles={modifiersStyles}
-                    />;
+                    />
         </div>
       </div>
       
