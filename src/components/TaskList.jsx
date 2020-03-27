@@ -27,8 +27,9 @@ export default function TaskList(){
             <ul>
                 {tasks.map(task =>
                     <li key={task.id}>
-                        Date: {task.date} 
+                        Date: {task.date} <br/>
                         Tasks: {task.tasks.map((task, i)=> <span key={i}>{task.name},</span>)}
+                        <br/>
                     </li>
                 )}
             </ul>

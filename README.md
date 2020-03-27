@@ -1,6 +1,11 @@
 #Todo Productivity App (In progress)
 
+
+## Previous working session:
+* Implemented Firestore
+* Ran tests 
+
 ## Next milestones:
-* Define the relation between "Dates" and "todos"
-* Implement that relation using Firestore
-* Run tests 
+* Review data structure for dates
+* Refine App to work in sync with Calendar
+

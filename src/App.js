@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import './App.css';
-// import firebase from './firebase';
-import TaskList from './components/TaskList.jsx';
+import TaskList from './components/TaskList';
 import AddTaskForm from './components/AddTaskForm'
 
 function App() {
