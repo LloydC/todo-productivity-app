@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import './App.css';
+// import firebase from './firebase';
+import TaskList from './components/TaskList.jsx';
+import AddTaskForm from './components/AddTaskForm'
 
 function App() {
   const today = new Date();
@@ -43,13 +46,8 @@ function App() {
         ) : (
           <p><b>{currentDay} </b></p>
         )}
-          
-          <ul>
-            <li>Task 1</li>
-            <li>Task 2</li>
-            <li>Task 3</li>
-          </ul>
-          <span className="addTask">+ Add task</span>
+          <TaskList/>
+          <AddTaskForm/>
         </div>
         <div className="gap">
           <DayPicker onDayClick={setDay} 
