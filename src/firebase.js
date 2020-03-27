@@ -1,14 +1,18 @@
 import firebase from 'firebase';
 import 'firebase/firestore'
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyDEkSkzyUdKhfTVfvclXNrEE2DxhNekBik",
-    authDomain: "todo-productivity-app.firebaseapp.com",
-    databaseURL: "https://todo-productivity-app.firebaseio.com",
+
+const {apiKey, authDomain, 
+    databaseURL, storageBucket,
+    messagingSenderId, appId} = process.env;
+
+const firebaseConfig = {
+    apiKey,
+    authDomain,
+    databaseURL,
     projectId: "todo-productivity-app",
-    storageBucket: "todo-productivity-app.appspot.com",
-    messagingSenderId: "722636973192",
-    appId: "1:722636973192:web:e256dbff05f5ecd0e2eb3d"
+    storageBucket,
+    messagingSenderId,
+    appId
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
