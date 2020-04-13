@@ -4,15 +4,10 @@ import 'react-day-picker/lib/style.css';
 import './App.css';
 import TaskList from './components/TaskList';
 import AddTaskForm from './components/AddTaskForm'
+import generateDay from './helpers/generateDate'
 
 function App() {
-  const today = new Date();
-  const month = today.getUTCMonth() + 1; //months from 1-12
-  const today2 = today.getUTCDate();
-  const year = today.getUTCFullYear();
-  const currentDay = `${today2}/${month <10 ? "0"+ month : month}/${year}`
-// Need to build a function for line 8-12
-
+  const currentDay = generateDay()
   const [day, setDay] = useState(undefined);
   const modifiers = { 
     sundays: { daysOfWeek: [0] },
