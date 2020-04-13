@@ -6,3 +6,10 @@ export default function generateDate(){
     const currentDay = `${today2}/${month <10 ? "0"+ month : month}/${year}`
     return currentDay;
 }
+
+export function getCurrentTime(){ //still need to work on this for Main.jsx
+    setInterval(function(){
+        const time = new Date().toLocaleTimeString();
+        return time;
+    }, 1000)
+}
